@@ -10,14 +10,24 @@
       <b-collapse id="nav-collapse" is-nav>
         <!-- left block -->
         <b-navbar-nav class="nav-bar_links">
-          <b-nav-item class="ml-5">О компании</b-nav-item>
-          <b-nav-item class="ml-5">Каталог</b-nav-item>
+          <b-nav-item
+            class="ml-5"
+            active-class="active"
+            to="/about"
+          >О компании</b-nav-item>
+          <b-nav-item
+            class="ml-5"
+            active-class="active"
+            to="#"
+          >
+            Каталог
+          </b-nav-item>
           <b-nav-item class="ml-5">Наши работы</b-nav-item>
           <b-nav-item class="ml-5">Партнеры</b-nav-item>
           <b-nav-item class="ml-5">Контакты</b-nav-item>
         </b-navbar-nav>
 
-        <!-- Right aligned nav items -->
+        <!-- Righ items -->
         <b-navbar-nav class="ml-auto mr-5 nav-bar_links">
           <b-nav-item class="nav-bar_right_item">
             <span class="fz-11">(3822)  </span><span class="blue"> 90-56-78, 22-65-02</span><br>
@@ -36,10 +46,6 @@ export default {
 
 <style lang="scss">
 .nav-bar{
-  width: 100%;
-  max-width: 1366px;
-  margin: 0 auto;
-
   .nav-bar_links{
     font-weight: normal;
     font-size: 14px;
@@ -62,5 +68,9 @@ export default {
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.05em;
+}
+
+.active {
+  color: #185FBF !important;
 }
 </style>

@@ -17,5 +17,9 @@ export default {
 <style lang="scss">
 #app {
   font-family: 'MullerRegular';
+  width: 100%;
+  max-width: 1366px;
+  margin: 0 auto;
+
 }
 </style>
