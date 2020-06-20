@@ -1,3 +1,24 @@
 @import 'node_modules/bootstrap/scss/bootstrap';
 @import 'node_modules/bootstrap-vue/src/index.scss';
 @import '../fonts/icmoon/style.css';
+
+
+@font-face{
+  font-family: 'MullerBold';
+  src: url(../fonts/muller/MullerBold.otf);
+}
+
+@font-face{
+  font-family: 'MullerLight';
+  src: url(../fonts/muller/MullerLight.otf);
+}
+
+@font-face{
+  font-family: 'MullerMedium';
+  src: url(../fonts/muller/MullerMedium.otf);
+}
+
+@font-face{
+  font-family: 'MullerRegular';
+  src: url(../fonts/muller/MullerRegular.otf);
+}
