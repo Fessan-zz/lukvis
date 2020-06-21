@@ -1,15 +1,15 @@
 <template>
   <b-col class="catalog__item" cols="3">
-    <h4 class="catalog__item-h4 my-4">{{item_data.title}}</h4>
+     <h4 class="catalog__item-h4 my-4">{{services_data.title}}</h4>
     <div id="al-c">
       <div class="card--item">
         <ul class="effects">
         <li>
-          <img :src="require(`../assets/img/${item_data.img}`)" alt="">
+          <img :src="require(`../assets/img/${services_data.img}`)" alt="">
           <div>
             <div class="catalog__item-p">
               <p
-                v-for="item of item_data.description"
+                v-for="item of services_data.description"
                 :key="item"
               >- {{item}}</p>
             </div>
@@ -22,11 +22,10 @@
 </template>
 
 <script>
-
 export default {
-  name: 'catalog-item',
+  name: 'services-item',
   props: {
-    item_data: {
+    services_data: {
       type: Object,
       default: () => {},
     },
