@@ -97,6 +97,33 @@
         </b-col>
         </b-row>
       </b-container>
+
+      <!-- map -->
+      <b-container class="main__map">
+        <b-row>
+          <h2 class="main__central-h2">География работ</h2>
+          <div class="main__map-wrapper">
+            <img src="../assets/img/map.png" alt="map" class="img-fluid">
+            <div class="main__map-wrapper--item-1"></div>
+            <div class="main__map-wrapper--item-2"></div>
+            <div class="main__map-wrapper--item-3"></div>
+            <div class="main__map-wrapper--item-4"></div>
+            <div class="main__map-wrapper--item-5"></div>
+            <div class="main__map-wrapper--item-6"></div>
+            <div class="main__map-wrapper--item-7"></div>
+          </div>
+        </b-row>
+      </b-container>
+      <!-- claim -->
+      <div class="main__claim">
+        <h2 class="main__central-h2 margin-left-claim">Отправьте заявку</h2>
+        <b-container class="main__claim-wrapper mt-3">
+          <p>Получите профессиональную консультацию</p>
+          <b-row class="main__claim-form">
+            adasdasdasdasda
+          </b-row>
+        </b-container>
+      </div>
     </section>
   </main>
 </template>
@@ -142,22 +169,5 @@ export default {
 </script>
 
 <style lang="scss" >
-.col-e {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-.main__icon{
-  height: 93px;
 
-  &-strong{
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 20px;
-    text-align: center;
-    color: #4F4F4F;
-  }
-}
-.loader {
-  margin-left: 50%;
-}
 </style>

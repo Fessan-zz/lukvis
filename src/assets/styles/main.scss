@@ -84,6 +84,120 @@
   padding-top: 112px;
   text-align: left;
   padding-bottom: 88px;
-  margin-left: 55px;
+  margin-left: 15%;
+  }
+}
+
+
+
+.col-e {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+.main__icon{
+  height: 93px;
+
+  &-strong{
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 20px;
+    text-align: center;
+    color: #4F4F4F;
+  }
+}
+.loader {
+  margin-left: 50%;
+}
+.main__map{
+  background-color: #FAFAFA;
+  &-wrapper{
+    position: relative;
+    z-index: 1;
+    &--item{
+      &-1{
+        border-radius: 50%;
+        background: linear-gradient(180deg, #22949B 0%, rgba(31, 177, 186, 0) 100%), #2760CE;
+        width: 11px;
+        height: 11px;
+        z-index: 3;
+        position: absolute;
+        top: 49%;
+        left: 14%;
+      }
+      &-2{
+        border-radius: 50%;
+        background: linear-gradient(180deg, #22949B 0%, rgba(31, 177, 186, 0) 100%), #2760CE;
+        width: 21px;
+        height: 21px;
+        z-index: 3;
+        position: absolute;
+        left: 34%;
+        top: 61%;
+      }
+      &-3{
+        border-radius: 50%;
+        background: linear-gradient(180deg, #22949B 0%, rgba(31, 177, 186, 0) 100%), #2760CE;
+        width: 11px;
+        height: 11px;
+        z-index: 3;
+        position: absolute;
+        top: 34%;
+        left: 37%;
+      }
+      &-4{
+        border-radius: 50%;
+        background: linear-gradient(180deg, #22949B 0%, rgba(31, 177, 186, 0) 100%), #2760CE;
+        width: 11px;
+        height: 11px;
+        z-index: 3;
+        position: absolute;
+        top: 46%;
+        left: 45%;
+      }
+      &-5{
+        border-radius: 50%;
+        background: linear-gradient(180deg, #22949B 0%, rgba(31, 177, 186, 0) 100%), #2760CE;
+        width: 11px;
+        height: 11px;
+        z-index: 3;
+        position: absolute;
+        top: 51%;
+        left: 48%;
+      }
+      &-6{
+        border-radius: 50%;
+        background: linear-gradient(180deg, #22949B 0%, rgba(31, 177, 186, 0) 100%), #2760CE;
+        width: 11px;
+        height: 11px;
+        z-index: 3;
+        position: absolute;
+        top: 57%;
+        left: 71%;
+      }
+      &-7{
+        border-radius: 50%;
+        background: linear-gradient(180deg, #22949B 0%, rgba(31, 177, 186, 0) 100%), #2760CE;
+        width: 21px;
+        height: 21px;
+        z-index: 3;
+        position: absolute;
+        top: 40%;
+        left: 79%;
+      }
+    }
+  }
+}
+.margin-left-claim{
+  padding-bottom: 0;
+}
+.main__claim{
+  background-color:  #E5E5E5;
+  &-wrapper p{
+    margin-left: 37px;
+  }
+  &-form {
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    
   }
 }
