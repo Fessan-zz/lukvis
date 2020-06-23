@@ -16,15 +16,29 @@
     </div>
     <!-- central section -->
     <section class="main__central">
-      <!-- catalog -->
-      <b-container>
+        <!-- catalog -->
+      <b-container >
         <h2 class="main__central-h2">Изготовление товаров<br> любой сложности</h2>
-          <l-catalog/>
+        <l-loader
+          class="loader"
+          v-if="loaderProducts"
+        />
+        <l-catalog
+          :catalog_data="GET_PRODUCTS_TO_STATE"
+          v-else
+        />
       </b-container>
       <!-- services -->
       <b-container>
         <h2 class="main__central-h2">Наша компания предлагает<br> широкий спектр услуг</h2>
-        <l-services/>
+        <l-loader
+          class="loader"
+          v-if="loaderServices"
+        />
+        <l-services
+          :services_data="GET_SERVICES_TO_STATE"
+          v-else
+        />
       </b-container>
       <!-- icons -->
       <b-container>
@@ -90,12 +104,39 @@
 <script>
 import lCatalog from '@/components/l-catalog.vue';
 import lServices from '@/components/l-services.vue';
+import lLoader from '@/components/layouts/l-loader.vue';
+import { mapActions, mapGetters } from 'vuex';
 
 export default {
   name: 'l-main',
   components: {
     lCatalog,
     lServices,
+    lLoader,
+  },
+  data() {
+    return {
+      loaderProducts: true,
+      loaderServices: true,
+    };
+  },
+  methods: {
+    ...mapActions(['GET_PRODUCTS', 'GET_SERVICES']),
+  },
+  mounted() {
+    this.GET_PRODUCTS().then((response) => {
+      if (response.data) {
+        this.loaderProducts = false;
+      }
+    });
+    this.GET_SERVICES().then((response) => {
+      if (response.data) {
+        this.loaderServices = false;
+      }
+    });
+  },
+  computed: {
+    ...mapGetters(['GET_PRODUCTS_TO_STATE', 'GET_SERVICES_TO_STATE']),
   },
 };
 </script>
@@ -116,5 +157,7 @@ export default {
     color: #4F4F4F;
   }
 }
-
+.loader {
+  margin-left: 50%;
+}
 </style>

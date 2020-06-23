@@ -1,17 +1,17 @@
 <template>
   <b-col class="catalog__item" cols="3">
-     <h4 class="catalog__item-h4 my-4">{{services_data.title}}</h4>
+     <h4 class="catalog__item-h4 my-4">{{services_item.name}}</h4>
     <div id="al-c">
       <div class="card--item">
         <ul class="effects">
         <li>
-          <img :src="require(`../assets/img/${services_data.img}`)" alt="">
+          <img :src="`https://safe-tundra-44761.herokuapp.com/${services_item.path_to}`" alt="Услуги">
           <div>
             <div class="catalog__item-p">
               <p
-                v-for="item of services_data.description"
-                :key="item"
-              >- {{item}}</p>
+                v-for="item of services_item.service"
+                :key="item.id"
+              >- {{item.title}}</p>
             </div>
           </div>
         </li>
@@ -25,7 +25,7 @@
 export default {
   name: 'services-item',
   props: {
-    services_data: {
+    services_item: {
       type: Object,
       default: () => {},
     },

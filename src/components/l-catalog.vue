@@ -2,8 +2,8 @@
   <div class="catalog">
     <b-row>
       <l-catalog-item
-        v-for="item of GET_PRODUCTS_TO_STATE"
-        :key="item.name"
+        v-for="(item, index)  of catalog_data"
+        :key="index"
         :item_data="item"
       />
     </b-row>
@@ -12,21 +12,17 @@
 
 <script>
 import lCatalogItem from '@/components/l-catalog-item.vue';
-import { mapActions, mapGetters } from 'vuex';
 
 export default {
   name: 'catalog',
   components: {
     lCatalogItem,
   },
-  methods: {
-    ...mapActions(['GET_PRODUCTS']),
-  },
-  computed: {
-    ...mapGetters(['GET_PRODUCTS_TO_STATE']),
-  },
-  mounted() {
-    this.GET_PRODUCTS();
+  props: {
+    catalog_data: {
+      type: Array,
+      default: () => [],
+    },
   },
 };
 </script>

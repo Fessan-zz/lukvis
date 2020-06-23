@@ -11,12 +11,14 @@ export default {
   },
   actions: {
     GET_SERVICES({ commit }) {
-      return axios('http://localhost:3000/services', {
+      return axios('https://safe-tundra-44761.herokuapp.com/api/services', {
         method: 'GET',
       }).then((item) => {
         commit('SET_SERVICES', item.data);
+        return item;
       }).catch((err) => {
         console.log(err);
+        return err;
       });
     },
   },

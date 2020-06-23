@@ -1,6 +1,7 @@
 {
   "products": [
     {
+      "url_img": "asdasdasd",
       "name": "metalProducts",
       "title": "Металлические изделия",
       "description": [
@@ -10,8 +11,7 @@
         "Дымоходы",
         "Силосы",
         "Водонапорные башни"
-      ],
-      "img": "img1.jpg"
+      ]
     },
     {
       "name": "BoilerEquipment",

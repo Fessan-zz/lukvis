@@ -11,12 +11,14 @@ export default {
   },
   actions: {
     GET_PRODUCTS({ commit }) {
-      return axios('http://localhost:3000/products', {
+      return axios('https://safe-tundra-44761.herokuapp.com/api/products', {
         method: 'GET',
       }).then((products) => {
         commit('SET_PRODUCTS', products.data);
+        return products;
       }).catch((err) => {
         console.log(err);
+        return err;
       });
     },
   },

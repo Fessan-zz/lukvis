@@ -1,17 +1,17 @@
 <template>
   <b-col class="catalog__item" cols="3">
-    <h4 class="catalog__item-h4 my-4">{{item_data.title}}</h4>
+    <h4 class="catalog__item-h4 my-4">{{item_data.name}}</h4>
     <div id="al-c">
       <div class="card--item">
         <ul class="effects">
         <li>
-          <img :src="require(`../assets/img/${item_data.img}`)" alt="">
+          <img :src="`https://safe-tundra-44761.herokuapp.com/${item_data.path_to}`" alt="Изделия">
           <div>
             <div class="catalog__item-p">
               <p
-                v-for="item of item_data.description"
-                :key="item"
-              >- {{item}}</p>
+                v-for="item of item_data.product"
+                :key="item.id"
+              >- {{item.title}}</p>
             </div>
           </div>
         </li>
@@ -24,7 +24,7 @@
 <script>
 
 export default {
-  name: 'catalog-item',
+  name: 'l-catalog-item',
   props: {
     item_data: {
       type: Object,
