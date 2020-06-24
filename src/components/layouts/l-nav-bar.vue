@@ -17,12 +17,12 @@
           >О компании</b-nav-item>
           <b-nav-item
             class="ml-5"
-            href="#catalog"
+            v-scroll-to="'#catalog'"
           >
             Каталог
           </b-nav-item>
           <b-nav-item
-            href="#services"
+            v-scroll-to="'#services'"
             class="ml-5"
           >Наши работы</b-nav-item>
           <b-nav-item class="ml-5">Партнеры</b-nav-item>
