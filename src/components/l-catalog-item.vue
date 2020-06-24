@@ -8,10 +8,12 @@
           <img :src="`https://safe-tundra-44761.herokuapp.com/${item_data.path_to}`" alt="Изделия">
           <div>
             <div class="catalog__item-p">
-              <p
+              <a
+                href="#"
                 v-for="item of item_data.product"
                 :key="item.id"
-              >- {{item.title}}</p>
+                >- {{item.title}}
+              </a>
             </div>
           </div>
         </li>
@@ -50,12 +52,12 @@ export default {
     text-align: center;
     height: 60px;
   }
-  &-p p{
+  &-p a{
     font-weight: 500;
     font-size: 18px;
     line-height: 18px;
     display: flex;
-    align-items: center;
+    align-items: left;
     color: #FFFFFF;
 
   }
@@ -104,9 +106,6 @@ export default {
  overflow: hidden;
  top: 0;
  left: 0;
-}
-.effects li a:hover {
- background: #ff0000;
 }
 .effects li div {
  opacity: 0;

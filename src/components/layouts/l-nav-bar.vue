@@ -17,21 +17,26 @@
           >О компании</b-nav-item>
           <b-nav-item
             class="ml-5"
-            active-class="active"
-            to="#"
+            href="#catalog"
           >
             Каталог
           </b-nav-item>
-          <b-nav-item class="ml-5">Наши работы</b-nav-item>
+          <b-nav-item
+            class="ml-5"
+            href="#map"
+          >Наши работы</b-nav-item>
           <b-nav-item class="ml-5">Партнеры</b-nav-item>
           <b-nav-item class="ml-5">Контакты</b-nav-item>
         </b-navbar-nav>
 
         <!-- Righ items -->
-        <b-navbar-nav class="ml-auto mr-5 nav-bar_links">
+        <b-navbar-nav class="ml-auto nav-bar_links">
           <b-nav-item class="nav-bar_right_item">
-            <span class="fz-11">(3822)  </span><span class="blue"> 90-56-78, 22-65-02</span><br>
-            <span class="fsz-13">uzorluk@mail.ru lukvis@mail.ru</span>
+            <div class="mt-3">
+              <span class="fz-11">(3822)
+              </span><span class="blue"> 90-56-78, 22-65-02</span>
+            </div>
+            <p class="fsz-13 mt-2">uzorluk@mail.ru lukvis@mail.ru</p>
           </b-nav-item>
         </b-navbar-nav>
       </b-collapse>
@@ -46,6 +51,9 @@ export default {
 
 <style lang="scss">
 .nav-bar{
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   .nav-bar_links{
     font-weight: normal;
     font-size: 14px;
@@ -55,9 +63,8 @@ export default {
 }
 .blue {
   color: #2760CE;
-  font-size: 14px !important;
+  font-size: 18px !important;
   font-weight: bold;
-  font-size: 11px;
   letter-spacing: 0.05em;
 }
 .fz-11{
@@ -68,6 +75,7 @@ export default {
   font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.05em;
+  text-align: center;
 }
 
 .active {

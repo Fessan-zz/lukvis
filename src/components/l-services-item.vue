@@ -8,10 +8,12 @@
           <img :src="`https://safe-tundra-44761.herokuapp.com/${services_item.path_to}`" alt="Услуги">
           <div>
             <div class="catalog__item-p">
-              <p
+              <a
+                href="#"
                 v-for="item of services_item.service"
                 :key="item.id"
-              >- {{item.title}}</p>
+                >- {{item.title}}
+              </a>
             </div>
           </div>
         </li>
@@ -33,7 +35,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 .catalog__item {
   margin-left: 11px;
@@ -104,9 +106,7 @@ export default {
  top: 0;
  left: 0;
 }
-.effects li a:hover {
- background: #ff0000;
-}
+
 .effects li div {
  opacity: 0;
  background-color: rgba(0, 0, 0, 0.35);

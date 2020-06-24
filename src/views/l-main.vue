@@ -17,7 +17,7 @@
     <!-- central section -->
     <section class="main__central">
         <!-- catalog -->
-      <b-container >
+      <b-container id="catalog" >
         <h2 class="main__central-h2">Изготовление товаров<br> любой сложности</h2>
         <l-loader
           class="loader"
@@ -29,7 +29,7 @@
         />
       </b-container>
       <!-- services -->
-      <b-container>
+      <b-container >
         <h2 class="main__central-h2">Наша компания предлагает<br> широкий спектр услуг</h2>
         <l-loader
           class="loader"
@@ -54,7 +54,7 @@
                   <img class="main__icon" src="../assets/img/1-1.svg" alt="check">
                 </b-col>
                 <b-col cols="6" class="d-flex align-items-center">
-                  <p><span class="main__icon-strong">14 лет</span> на рынке</p>
+                  <p><span class="main__icon-strong">14 лет</span><br> на рынке</p>
                 </b-col>
               </b-row>
             </b-col>
@@ -76,7 +76,7 @@
                   <img class="main__icon" src="../assets/img/3.svg" alt="check">
                 </b-col>
                 <b-col cols="6" class="d-flex align-items-center">
-                  <p><span class="main__icon-strong">100+<br></span> реализованных проектов</p>
+                  <p><span class="main__icon-strong">200+<br></span> реализованных проектов</p>
                 </b-col>
               </b-row>
             </b-col>
@@ -99,7 +99,7 @@
       </b-container>
 
       <!-- map -->
-      <b-container class="main__map">
+      <b-container class="main__map" id="map">
         <b-row>
           <h2 class="main__central-h2">География работ</h2>
           <div class="main__map-wrapper">
