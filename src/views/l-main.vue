@@ -8,7 +8,12 @@
           <div class='main__hero-wrapper-title-span'>Любая сложность<br>Индивидуальный подход</div>
         </div>
         <div class="main__hero-anchor pb-5 d-flex">
-          <a href="#" class="main__hero-anchor-link">ОТПРАВИТЬ ЗАЯВКУ
+          <a
+            href="#"
+            class="main__hero-anchor-link"
+            v-scroll-to="'#claim'"
+            >
+              ОТПРАВИТЬ ЗАЯВКУ
             <i class="icon-req ml-3"></i>
           </a>
         </div>
@@ -117,11 +122,12 @@
       </b-container>
       </section>
       <!-- claim -->
-      <div class="main__claim">
+      <div class="main__claim" id="claim">
         <l-claim/>
       </div>
     </section>
     <l-scroll-to-icon></l-scroll-to-icon>
+    <l-icon-claim></l-icon-claim>
   </main>
 </template>
 
@@ -132,6 +138,7 @@ import lLoader from '@/components/layouts/l-loader.vue';
 import lClaim from '@/components/l-claim.vue';
 import { mapActions, mapGetters } from 'vuex';
 import lScrollToIcon from '../components/l-scroll-to-icon.vue';
+import lIconClaim from '../components/l-scroll-claim.vue';
 
 export default {
   name: 'l-main',
@@ -141,6 +148,7 @@ export default {
     lLoader,
     lClaim,
     lScrollToIcon,
+    lIconClaim,
   },
   data() {
     return {
