@@ -46,22 +46,6 @@
 
 <script>
 export default {
-  async move(number) {
-    const slide = this.$refs[`slaid-${number}`];
-    const count = 500;
-    const top = window.scrollY + slide.getBoundingClientRect().y;
-    const startTop = window.scrollY;
-    const delta = (top - window.scrollY) / 500;
-    for (let i = 0; i < 100; i += 1) {
-      // eslint-disable-next-line no-await-in-loop
-      await new Promise((resolve) => {
-        window.setTimeout(() => {
-          resolve();
-        }, 1000 / count);
-      });
-      window.scrollTo(0, startTop + delta);
-    }
-  },
 };
 </script>
 
