@@ -16,7 +16,6 @@ const routes = [
   },
   {
     path: '*',
-    // eslint-disable-next-line no-undef
     component: () => import('../views/404.vue'),
   },
 ];

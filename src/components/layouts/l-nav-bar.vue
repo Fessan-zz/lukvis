@@ -26,10 +26,6 @@
             v-scroll-to="'#services'"
             class="ml-5"
           >Наши работы</b-nav-item>
-          <b-nav-item class="ml-5"
-            v-if="isVisibilityCat()"
-          >Партнеры
-          </b-nav-item>
           <b-nav-item
             class="ml-5"
             v-if="isVisibilityCat()"
@@ -43,7 +39,7 @@
               <span class="fz-11">(3822)
               </span><span class="blue"> 90-56-78, 22-65-02</span>
             </div>
-            <p class="fsz-13 mt-2">uzorluk@mail.ru lukvis@mail.ru</p>
+            <p class="fsz-13 mt-2">lukvis@mail.ru</p>
           </b-nav-item>
         </b-navbar-nav>
       </b-collapse>
