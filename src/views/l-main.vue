@@ -121,6 +121,7 @@
         <l-claim/>
       </div>
     </section>
+    <l-scroll-to-icon></l-scroll-to-icon>
   </main>
 </template>
 
@@ -130,6 +131,7 @@ import lServices from '@/components/l-services.vue';
 import lLoader from '@/components/layouts/l-loader.vue';
 import lClaim from '@/components/l-claim.vue';
 import { mapActions, mapGetters } from 'vuex';
+import lScrollToIcon from '../components/l-scroll-to-icon.vue';
 
 export default {
   name: 'l-main',
@@ -138,6 +140,7 @@ export default {
     lServices,
     lLoader,
     lClaim,
+    lScrollToIcon,
   },
   data() {
     return {
