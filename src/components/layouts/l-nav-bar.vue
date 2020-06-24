@@ -13,11 +13,12 @@
           <b-nav-item
             class="ml-5"
             active-class="active"
-            to="/about"
+            :to="{name: 'about'}"
           >О компании</b-nav-item>
           <b-nav-item
             class="ml-5"
             v-scroll-to="'#catalog'"
+            v-if="isVisibilityCat()"
           >
             Каталог
           </b-nav-item>
@@ -25,8 +26,14 @@
             v-scroll-to="'#services'"
             class="ml-5"
           >Наши работы</b-nav-item>
-          <b-nav-item class="ml-5">Партнеры</b-nav-item>
-          <b-nav-item class="ml-5">Контакты</b-nav-item>
+          <b-nav-item class="ml-5"
+            v-if="isVisibilityCat()"
+          >Партнеры
+          </b-nav-item>
+          <b-nav-item
+            class="ml-5"
+            v-if="isVisibilityCat()"
+          >Контакты</b-nav-item>
         </b-navbar-nav>
 
         <!-- Righ items -->
@@ -46,6 +53,16 @@
 
 <script>
 export default {
+  methods: {
+    isVisibilityCat() {
+      if (this.$route.path === '/') {
+        return true;
+      } return false;
+    },
+  },
+  mounted() {
+    console.log(this.$route.path);
+  },
 };
 </script>
 
