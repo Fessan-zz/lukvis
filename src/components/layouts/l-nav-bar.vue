@@ -17,13 +17,12 @@
           >О компании</b-nav-item>
           <b-nav-item
             class="ml-5"
-            href="#catalog"
+            @click="move(1)"
           >
             Каталог
           </b-nav-item>
           <b-nav-item
             class="ml-5"
-            href="#map"
           >Наши работы</b-nav-item>
           <b-nav-item class="ml-5">Партнеры</b-nav-item>
           <b-nav-item class="ml-5">Контакты</b-nav-item>
