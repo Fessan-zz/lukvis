@@ -109,7 +109,7 @@ export default {
 }
 .effects li div {
  opacity: 0;
- background-color: rgba(0, 0, 0, 0.35);
+ background-color: rgba(0, 0, 0, 0.5);
  transition: all 0.4s ease-in-out;
  color: #fff;
 }

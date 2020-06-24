@@ -5,7 +5,7 @@
       <b-container class="main__hero">
         <h1 class="mb-5">Завод металлоконструкций<br> ООО “ЛУКВИС”</h1>
         <div class="main__hero-wrapper-title mt-5 pb-5">
-          <div class='main__hero-wrapper-title-span'>Любая сложность.<br>Индивидуальный подход</div>
+          <div class='main__hero-wrapper-title-span'>Любая сложность<br>Индивидуальный подход</div>
         </div>
         <div class="main__hero-anchor pb-5 d-flex">
           <a href="#" class="main__hero-anchor-link">ОТПРАВИТЬ ЗАЯВКУ
@@ -99,7 +99,8 @@
       </b-container>
 
       <!-- map -->
-      <b-container class="main__map" id="map">
+      <section class="main__map">
+        <b-container id="map">
         <b-row>
           <h2 class="main__central-h2">География работ</h2>
           <div class="main__map-wrapper">
@@ -114,15 +115,10 @@
           </div>
         </b-row>
       </b-container>
+      </section>
       <!-- claim -->
       <div class="main__claim">
-        <h2 class="main__central-h2 margin-left-claim">Отправьте заявку</h2>
-        <b-container class="main__claim-wrapper mt-3">
-          <p>Получите профессиональную консультацию</p>
-          <b-row class="main__claim-form">
-            adasdasdasdasda
-          </b-row>
-        </b-container>
+        <l-claim/>
       </div>
     </section>
   </main>
@@ -132,6 +128,7 @@
 import lCatalog from '@/components/l-catalog.vue';
 import lServices from '@/components/l-services.vue';
 import lLoader from '@/components/layouts/l-loader.vue';
+import lClaim from '@/components/l-claim.vue';
 import { mapActions, mapGetters } from 'vuex';
 
 export default {
@@ -140,6 +137,7 @@ export default {
     lCatalog,
     lServices,
     lLoader,
+    lClaim,
   },
   data() {
     return {
