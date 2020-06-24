@@ -1,6 +1,6 @@
 <template>
   <footer class="footer" id="footer">
-    <b-container class="pt-5">
+    <b-container class="pt-5 pb-5">
       <b-row class="justify-content-between">
         <b-col cols="6">
           <p>
@@ -54,7 +54,7 @@ export default {
   background: linear-gradient(254.31deg, #2C9FAE -5.17%,
   rgba(31, 177, 186, 0) 125.7%), #2760CE;
   font-size: 13px;
-  line-height: 40px;
+  line-height: 28px;
   letter-spacing: 0.05em;
   color: #FFFFFF;
   &__text-span{
