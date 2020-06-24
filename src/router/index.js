@@ -14,6 +14,11 @@ const routes = [
     name: 'about',
     component: () => import('../views/l-about.vue'),
   },
+  {
+    path: '*',
+    // eslint-disable-next-line no-undef
+    component: () => import('../views/404.vue'),
+  },
 ];
 
 const router = new VueRouter({
