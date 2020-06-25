@@ -14,7 +14,10 @@
             @submit.prevent="submit"
           >
             <!-- for name ФИО -->
-            <div class="form__group d-flex flex-column">
+            <div
+              class="form__group d-flex flex-column"
+              :class="{ 'errorInput': ($v.name.$dirty && $v.name.$error)}"
+            >
               <label
                 for="fio"
                 class="claim__form-label"
@@ -25,9 +28,19 @@
                 id="fio"
                 type="text"
                 placeholder="Ввeдите ФИО"
-                v-model.trim="formInfo.name"
+                v-model.trim="$v.name.$model"
               >
-              <span class="claim__form-error">Поле обязательно для заполнения</span>
+              <div
+                class="claim__form-error"
+                v-if="!$v.name.minLength || !$v.name.maxLength "
+              >Поле должно содержать от 3 до 60 символов
+              </div>
+              <div
+                class="claim__form-error"
+                v-if="!$v.name.required"
+              >
+                Поле обязательно для заполнения
+              </div>
             </div>
             <!-- for phone  -->
             <div
@@ -44,7 +57,7 @@
                   placeholder="+7 (999) 999 - 999"
                   name="phone"
                   mask="+7(###) ### - ####"
-                  v-model.trim="formInfo.phone"
+                  v-model.trim="phone"
               />
               <span class="claim__form-error">Поле обязательно для заполнения</span>
             </div>
@@ -61,7 +74,7 @@
                 id="email"
                 type="text"
                 placeholder="email"
-                v-model.trim="formInfo.email"
+                v-model.trim="email"
               >
               <span class="claim__form-error">Поле обязательно для заполнения</span>
             </div>
@@ -74,7 +87,7 @@
               Выберете категорию товара
               </label>
               <l-select
-                :selected="formInfo.selected"
+                :selected="selected"
                 :options="categories"
                 @select="optionSelected"
               >
@@ -92,7 +105,7 @@
               <textarea
                 id="comments"
                 rows="3"
-                v-model.trim="formInfo.comments"
+                v-model.trim="comments"
               >
               </textarea>
               <span class="claim__form-error">Поле обязательно для заполнения</span>
@@ -121,7 +134,7 @@
               <input
                 type="checkbox"
                 id="checkbox"
-                v-model="formInfo.checked"
+                v-model="checked"
               >
               <label
                 for="checkbox"
@@ -142,6 +155,7 @@
 </template>
 
 <script>
+import { required, minLength, maxLength } from 'vuelidate/lib/validators';
 import lSelect from './utilites/l-select.vue';
 
 export default {
@@ -151,15 +165,13 @@ export default {
   },
   data() {
     return {
-      formInfo: {
-        name: '',
-        phone: NaN,
-        email: '',
-        selected: 'Выберите категорию',
-        comments: '',
-        file: '',
-        checked: false,
-      },
+      name: '',
+      phone: NaN,
+      email: '',
+      selected: 'Выберите категорию',
+      comments: '',
+      file: '',
+      checked: false,
       categories: [
         { name: 'Металлоизделия', value: 'Металлоизделия' },
         { name: 'Элементы фундаментов', value: 'Элементы фундаментов' },
@@ -170,24 +182,44 @@ export default {
         { name: 'Гибка листового металла', value: 'Гибка листового металла' },
         { name: 'Резка на пиле', value: 'Резка на пиле' },
       ],
+      errorInfo: '',
     };
+  },
+  mounted() {
+    console.log(this.$v.name.$error);
+  },
+  validations: {
+    name: {
+      minLength: minLength(3),
+      maxLength: maxLength(60),
+      required,
+    },
   },
   methods: {
     optionSelected(option) {
-      this.formInfo.selected = option.name;
+      this.selected = option.name;
     },
     submit() {
       console.log(this.formInfo);
     },
     handleFileUpload() {
       // eslint-disable-next-line prefer-destructuring
-      this.formInfo.file = this.$refs.file.files[0];
+      this.file = this.$refs.file.files[0];
     },
   },
 };
 </script>
 
 <style lang="scss" scoped>
+.form-group .claim__form-error {
+  display: none;
+}
+.form-group  .errorInput {
+  .claim__form-error {
+    display: block;
+  }
+}
+
 textarea{
   resize: none;
 }
