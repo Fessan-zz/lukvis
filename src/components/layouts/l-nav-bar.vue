@@ -69,8 +69,8 @@ export default {
   margin: 0 auto;
   .nav-bar_links{
     font-weight: normal;
-    font-size: 14px;
-    line-height: 14px;
+    font-size: 18px;
+    line-height: 18px;
     color: #464646;
   }
 }

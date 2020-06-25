@@ -1,18 +1,29 @@
 <template>
   <div class="claim">
-    <h2 class="main__central-h2 margin-left-claim">Отправьте заявку</h2>
-      <b-container class="main__claim-wrapper mt-3">
-        <p>Получите профессиональную консультацию</p>
-        <b-row class="main__claim-form">
-        adasdasdasdasda
-        </b-row>
-      </b-container>
+    <b-container>
+      <b-row>
+        <b-col>
+        </b-col>
+        <b-col>2</b-col>
+      </b-row>
+    </b-container>
   </div>
 </template>
 
 <script>
 export default {
   name: 'l-claim',
+  data() {
+    return {
+      formInfo: {
+        name: '',
+        phone: NaN,
+      },
+    };
+  },
+  mounted() {
+    console.log(this.formInfo);
+  },
 };
 </script>
 
