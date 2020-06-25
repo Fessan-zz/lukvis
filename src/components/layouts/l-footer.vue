@@ -21,7 +21,10 @@
           </p>
         </b-col>
         <b-col cols="5">
-          <img src="../../assets/img/map2.jpg" class="img-fluid" alt="map_footer">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2198.341476010741!2d84.99515628565092!3d56.56518897365303!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4326919c685ff4df%3A0x7183d64d017b0401!2z0JrRg9C30L7QstC70LXQstGB0LrQuNC5INGC0YDQsNC60YIsIDYsINCi0L7QvNGB0LosINCi0L7QvNGB0LrQsNGPINC-0LHQuy4sIDYzNDA1OA!5e0!3m2!1sru!2sru!4v1593094118617!5m2!1sru!2sru"
+          width="445" height="197" frameborder="0"
+          style="border:0;" allowfullscreen="" aria-hidden="false"
+          tabindex="0"></iframe>
         </b-col>
         <b-col cols="1">
            <a href="google.com" class="footer__a">

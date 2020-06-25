@@ -56,9 +56,6 @@ export default {
       } return false;
     },
   },
-  mounted() {
-    console.log(this.$route.path);
-  },
 };
 </script>
 
