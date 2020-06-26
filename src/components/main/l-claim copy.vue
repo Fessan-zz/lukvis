@@ -16,6 +16,7 @@
             <!-- for name ФИО -->
             <div
               class="form__group d-flex flex-column"
+              :class="{ 'errorInput': ($v.name.$dirty && $v.name.$error)}"
             >
               <label
                 for="fio"
@@ -29,21 +30,21 @@
                 placeholder="Ввeдите ФИО"
                 v-model.trim="$v.name.$model"
               >
-              <div
-                class="claim__form-error"
-                v-if="$v.name.$error"
-              >
-                <template
-                  v-if="!$v.name.required"
+                <div
+                  class="claim__form-error"
+                  v-if="$v.name.$error"
                 >
-                  Поле обязательно для заполнения<br>
-                </template>
-                <template
-                  v-if="!$v.name.minLength || !$v.name.maxLength"
-                >
-                  Поле должно содержать от 3 до 60 символов
-                </template>
-              </div>
+                  <template
+                    v-if="!$v.name.required"
+                  >
+                    Поле обязательно для заполнения
+                  </template>
+                  <template
+                    v-if="!$v.name.minLength || !$v.name.maxLength"
+                  >
+                    Поле должно содержать от 3 до 60 символов
+                  </template>
+                </div>
             </div>
             <!-- for phone  -->
             <div
@@ -60,23 +61,9 @@
                   placeholder="+7 (999) 999 - 999"
                   name="phone"
                   mask="+7(###) ### - ####"
-                  v-model.trim="$v.phone.$model"
+                  v-model.trim="phone"
               />
-              <div
-                class="claim__form-error"
-                v-if="$v.phone.$error"
-              >
-                <template
-                  v-if="!$v.phone.required"
-                >
-                  Поле обязательно для заполнения<br>
-                </template>
-                <template
-                  v-if="!$v.name.minLength || !$v.name.maxLength"
-                >
-                  Заполните поле в международном формате
-                </template>
-              </div>
+              <span class="claim__form-error">Поле обязательно для заполнения</span>
             </div>
             <!-- for email -->
             <div class="form__group d-flex flex-column mt-3">
@@ -91,28 +78,9 @@
                 id="email"
                 type="text"
                 placeholder="email"
-                v-model.trim="$v.email.$model"
+                v-model.trim="email"
               >
-              <div
-                class="claim__form-error"
-                v-if="$v.email.$error && $v.email.$dirty"
-              >
-                <template
-                  v-if="!$v.email.required"
-                >
-                  Поле обязательно для заполнения<br>
-                </template>
-                <template
-                  v-if="!$v.email.email"
-                >
-                  Введите действительную почту
-                </template>
-                <template
-                  v-if="!$v.email.minLength || !$v.email.maxLength"
-                >
-                  Поле должно содержать от 3 до 60 символов
-                </template>
-              </div>
+              <span class="claim__form-error">Поле обязательно для заполнения</span>
             </div>
             <!-- for category select -->
             <div class="form__group d-flex flex-column mt-4">
@@ -122,27 +90,13 @@
               >
               Выберете категорию товара
               </label>
-              <select
-                v-model="$v.selected.$model"
-                class="claim__form-input"
+              <l-select
+                :selected="selected"
+                :options="categories"
+                @select="optionSelected"
               >
-                <option
-                  v-for="item of categories"
-                  :key="item.name"
-                  :value="item.name"
-                  >
-                  {{item.name}}
-                  </option>
-              </select>
-              <div
-                class="claim__form-error"
-                v-if="$v.selected.$error"
-              >
-                <template
-                >
-                  Поле обязательно для заполнения
-                </template>
-              </div>
+              </l-select>
+              <span class="claim__form-error">Поле обязательно для заполнения</span>
             </div>
             <!-- for text-area -->
             <div class="form__group d-flex flex-column mt-3">
@@ -155,9 +109,10 @@
               <textarea
                 id="comments"
                 rows="3"
-                v-model.trim="$v.comments"
+                v-model.trim="comments"
               >
               </textarea>
+              <span class="claim__form-error">Поле обязательно для заполнения</span>
             </div>
             <!-- for file -->
             <div
@@ -183,8 +138,7 @@
               <input
                 type="checkbox"
                 id="checkbox"
-                @change="$v.checked.$touch()"
-                v-model="$v.checked.$model"
+                v-model="checked"
               >
               <label
                 for="checkbox"
@@ -192,16 +146,6 @@
               >
               Принимаю условия <a href="#" class="blue-span">пользовательского соглашения</a>
               </label>
-              <div
-                  class="claim__form-error"
-                  v-if="$v.checked.$error"
-                >
-                  <template
-                    v-if="!$v.checked.required"
-                  >
-                    Поле обязательно для заполнения
-                  </template>
-                </div>
             </div>
             <button
               type="submit"
@@ -216,86 +160,70 @@
 </template>
 
 <script>
-import {
-  required, minLength, maxLength, email,
-} from 'vuelidate/lib/validators';
+import { required, minLength, maxLength } from 'vuelidate/lib/validators';
+import lSelect from '../utilites/l-select.vue';
 
 export default {
   name: 'l-claim',
+  components: {
+    lSelect,
+  },
   data() {
     return {
       name: '',
-      phone: '',
+      phone: NaN,
       email: '',
-      selected: '',
+      selected: 'Выберите категорию',
       comments: '',
       file: '',
       checked: false,
       categories: [
-        { name: 'Металлоизделия', id: 1 },
-        { name: 'Элементы фундаментов', id: 2 },
-        { name: 'Котельное оборудование', id: 3 },
-        { name: 'Работы по индивидуальным заказам', id: 4 },
-        { name: 'Плазменная резка', id: 5 },
-        { name: 'Металлопрокат', id: 6 },
-        { name: 'Гибка листового металла', id: 7 },
-        { name: 'Резка на пиле', id: 8 },
+        { name: 'Металлоизделия', value: 'Металлоизделия' },
+        { name: 'Элементы фундаментов', value: 'Элементы фундаментов' },
+        { name: 'Котельное оборудование', value: 'Котельное оборудование' },
+        { name: 'Работы по индивидуальным заказам', value: 'Работы по индивидуальным заказам' },
+        { name: 'Плазменная резка', value: 'Плазменная резка' },
+        { name: 'Металлопрокат', value: 'Металлопрокат' },
+        { name: 'Гибка листового металла', value: 'Гибка листового металла' },
+        { name: 'Резка на пиле', value: 'Резка на пиле' },
       ],
       errorInfo: '',
     };
   },
-
+  mounted() {
+    console.log(this.$v.name.$error);
+  },
   validations: {
     name: {
       minLength: minLength(3),
       maxLength: maxLength(60),
       required,
     },
-    phone: {
-      required,
-      minLength: minLength(10),
-      maxLength: maxLength(10),
-    },
-    email: {
-      email,
-      required,
-      minLength: minLength(3),
-      maxLength: maxLength(60),
-    },
-    selected: {
-      required,
-    },
-    checked: {
-      required(val) {
-        return val;
-      },
-    },
   },
   methods: {
     optionSelected(option) {
-      this.$v.selected = option.name;
+      this.selected = option.name;
+    },
+    submit() {
+      console.log(this.formInfo);
     },
     handleFileUpload() {
       // eslint-disable-next-line prefer-destructuring
       this.file = this.$refs.file.files[0];
-    },
-    submit() {
-      // eslint-disable-next-line prefer-const
-      let formData = new FormData();
-      formData.append('username', 'Groucho');
-      formData.set('name', this.name);
-      formData.set('phone', this.phone);
-      formData.set('email', this.email);
-      formData.set('selected', this.selected);
-      formData.set('comments', this.comments);
-      formData.set('file', this.file);
-      console.log(formData, 'formdata');
     },
   },
 };
 </script>
 
 <style lang="scss" scoped>
+.form-group .claim__form-error {
+  display: none;
+}
+.form-group  .errorInput {
+  .claim__form-error {
+    display: block;
+  }
+}
 
 textarea{
   resize: none;
