@@ -10,7 +10,7 @@
 
 <script>
 
-import lScrollToTop from './utilites/l-scroll-to-top.vue';
+import lScrollToTop from './l-scroll-to-top.vue';
 
 export default {
   components: {

@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import lServicesItem from '@/components/l-services-item.vue';
+import lServicesItem from '@/components/main/l-services-item.vue';
 
 export default {
   name: 'services',

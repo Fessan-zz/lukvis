@@ -156,7 +156,7 @@
 
 <script>
 import { required, minLength, maxLength } from 'vuelidate/lib/validators';
-import lSelect from './utilites/l-select.vue';
+import lSelect from '../utilites/l-select.vue';
 
 export default {
   name: 'l-claim',
@@ -178,7 +178,7 @@ export default {
         { name: 'Котельное оборудование', value: 'Котельное оборудование' },
         { name: 'Работы по индивидуальным заказам', value: 'Работы по индивидуальным заказам' },
         { name: 'Плазменная резка', value: 'Плазменная резка' },
-        { name: 'Металлопракат', value: 'Металлопракат' },
+        { name: 'Металлопрокат', value: 'Металлопрокат' },
         { name: 'Гибка листового металла', value: 'Гибка листового металла' },
         { name: 'Резка на пиле', value: 'Резка на пиле' },
       ],

@@ -1,8 +1,8 @@
 <template>
-  <main class="main">
+  <b-container class="main col-lg-12">
     <!-- hero section -->
     <div class="wrapper__hero">
-      <b-container class="main__hero">
+      <b-container class="main__hero ">
         <h1 class="mb-5">Завод металлоконструкций<br> ООО “ЛУКВИС”</h1>
         <div class="main__hero-wrapper-title mt-5 pb-5">
           <div class='main__hero-wrapper-title-span'>Любая сложность<br>Индивидуальный подход</div>
@@ -128,17 +128,17 @@
     </section>
     <l-scroll-to-icon></l-scroll-to-icon>
     <l-icon-claim></l-icon-claim>
-  </main>
+  </b-container>
 </template>
 
 <script>
-import lCatalog from '@/components/l-catalog.vue';
-import lServices from '@/components/l-services.vue';
+import lCatalog from '@/components/main/l-catalog.vue';
+import lServices from '@/components/main/l-services.vue';
 import lLoader from '@/components/layouts/l-loader.vue';
-import lClaim from '@/components/l-claim.vue';
+import lClaim from '@/components/main/l-claim.vue';
 import { mapActions, mapGetters } from 'vuex';
-import lScrollToIcon from '../components/l-scroll-to-icon.vue';
-import lIconClaim from '../components/l-scroll-claim.vue';
+import lScrollToIcon from '../components/utilites/l-scroll-to-icon.vue';
+import lIconClaim from '../components/utilites/l-scroll-claim.vue';
 
 export default {
   name: 'l-main',

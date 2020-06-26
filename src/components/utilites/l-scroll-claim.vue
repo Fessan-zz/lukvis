@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import lIconClaim from './utilites/l-icon-claim.vue';
+import lIconClaim from './l-icon-claim.vue';
 
 export default {
   name: 'l-scroll-claim',
