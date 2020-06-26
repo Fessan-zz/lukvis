@@ -253,7 +253,7 @@ textarea{
       width: 100%;
       height: 118px;
       max-width: 668px;
-      margin-left: -137px;
+      margin-left: -123px;
     }
     &-wrapper-p{
       font-weight: 500;
