@@ -2,13 +2,13 @@
   <div class="claim">
     <b-container class="claim__cont">
       <b-row>
-        <b-col>
+        <b-col cols="6">
           <h3 class="claim__cont-h3">Отправьте заявку</h3>
           <div class="claim__cont-wrapper-blue">
             <p class="claim__cont-wrapper-p pt-3">Получите профессиональную консультацию</p>
           </div>
         </b-col>
-        <b-col>
+        <b-col cols="6">
           <form
             class="claim__form mt-3 p-5"
             @submit.prevent="submit"
@@ -268,7 +268,7 @@ textarea{
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     width: 100%;
-    width: 540px;
+    max-width: 540px;
 
     &-label{
     font-style: italic;

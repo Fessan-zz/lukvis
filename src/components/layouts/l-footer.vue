@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer" id="footer">
+  <footer class="footer container col-lg-12" id="footer">
     <b-container class="pt-5 pb-5">
       <b-row class="justify-content-between">
         <b-col cols="6">
@@ -52,6 +52,10 @@ export default {
   &:hover{
     color: #FFD600;
   }
+}
+#footer{
+  width: 100%;
+  max-width: 1336px;
 }
 .footer{
   background: linear-gradient(254.31deg, #2C9FAE -5.17%,
