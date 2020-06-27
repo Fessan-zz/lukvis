@@ -282,13 +282,12 @@ export default {
     submit() {
       // eslint-disable-next-line prefer-const
       let formData = new FormData();
-      formData.append('username', 'Groucho');
-      formData.set('name', this.name);
-      formData.set('phone', this.phone);
-      formData.set('email', this.email);
-      formData.set('selected', this.selected);
-      formData.set('comments', this.comments);
-      formData.set('file', this.file);
+      formData.append('name', this.name);
+      formData.append('phone', this.phone);
+      formData.append('email', this.email);
+      formData.append('selected', this.selected);
+      formData.append('comments', this.comments);
+      formData.append('file', this.file);
       console.log(formData, 'formdata');
     },
   },

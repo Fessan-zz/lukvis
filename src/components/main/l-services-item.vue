@@ -5,7 +5,7 @@
       <div class="card--item">
         <ul class="effects">
         <li>
-          <img :src="`https://safe-tundra-44761.herokuapp.com/${services_item.path_to}`" alt="Услуги">
+          <img :src="`https://peaceful-harbor-09047.herokuapp.com/${services_item.path_to}`" alt="Услуги">
           <div>
             <div class="catalog__item-p">
               <a

@@ -11,7 +11,7 @@ export default {
   },
   actions: {
     GET_SERVICES({ commit }) {
-      return axios('https://safe-tundra-44761.herokuapp.com/api/services', {
+      return axios('https://peaceful-harbor-09047.herokuapp.com/api/services', {
         method: 'GET',
       }).then((item) => {
         commit('SET_SERVICES', item.data);

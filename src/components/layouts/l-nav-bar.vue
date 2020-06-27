@@ -51,9 +51,7 @@
 export default {
   methods: {
     isVisibilityCat() {
-      if (this.$route.path === '/') {
-        return true;
-      } return false;
+      return this.$route.path === '/';
     },
   },
 };
