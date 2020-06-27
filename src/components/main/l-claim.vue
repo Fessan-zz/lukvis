@@ -155,9 +155,8 @@
               <textarea
                 id="comments"
                 rows="3"
-                v-model.trim="$v.comments"
-              >
-              </textarea>
+                v-model.trim="comments"
+              />
             </div>
             <!-- for file -->
             <div
@@ -206,7 +205,6 @@
             <button
               type="submit"
               class="claim__btn"
-              :disabled="$v.$invalid"
             >ОТПРАВИТЬ ЗАЯВКУ</button>
           </form>
         </b-col>
@@ -216,9 +214,11 @@
 </template>
 
 <script>
+// :disabled="$v.$invalid"
 import {
   required, minLength, maxLength, email,
 } from 'vuelidate/lib/validators';
+import { mapActions } from 'vuex';
 
 export default {
   name: 'l-claim',
@@ -231,6 +231,7 @@ export default {
       comments: '',
       file: '',
       checked: false,
+      emailTo: 'fessan@ya.ru',
       categories: [
         { name: 'Металлоизделия', id: 1 },
         { name: 'Элементы фундаментов', id: 2 },
@@ -272,6 +273,7 @@ export default {
     },
   },
   methods: {
+    ...mapActions(['POST_CLAIM']),
     optionSelected(option) {
       this.$v.selected = option.name;
     },
@@ -282,13 +284,14 @@ export default {
     submit() {
       // eslint-disable-next-line prefer-const
       let formData = new FormData();
-      formData.append('name', this.name);
+      formData.append('full__name', this.name);
       formData.append('phone', this.phone);
       formData.append('email', this.email);
-      formData.append('selected', this.selected);
+      formData.append('category', this.selected);
       formData.append('comments', this.comments);
       formData.append('file', this.file);
-      console.log(formData, 'formdata');
+      formData.append('emailTo', this.emailTo);
+      this.POST_CLAIM(formData);
     },
   },
 };
