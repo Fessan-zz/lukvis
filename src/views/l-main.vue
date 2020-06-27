@@ -105,20 +105,15 @@
 
       <!-- map -->
       <section class="main__map">
-        <b-container id="map">
-        <b-row>
-          <h2 class="main__central-h2">География работ</h2>
-          <div class="main__map-wrapper">
-            <img src="../assets/img/map.png" alt="map" class="img-fluid">
-            <div class="main__map-wrapper--item-1"></div>
-            <div class="main__map-wrapper--item-2"></div>
-            <div class="main__map-wrapper--item-3"></div>
-            <div class="main__map-wrapper--item-4"></div>
-            <div class="main__map-wrapper--item-5"></div>
-            <div class="main__map-wrapper--item-6"></div>
-            <div class="main__map-wrapper--item-7"></div>
-          </div>
-        </b-row>
+        <b-container id="map" class="clo-lg-12 pb-5" >
+          <b-row>
+            <h2 class="main__map-h">География работ</h2>
+          </b-row>
+          <b-row class="position-relative">
+            <img src="../assets/img/map.png" alt="map" class="img-fluid main__map-item1">
+            <img src="../assets/img/star.png"
+            alt="city" class="main__map--item2 img-fliud position-absolute">
+          </b-row>
       </b-container>
       </section>
       <!-- claim -->

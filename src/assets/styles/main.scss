@@ -108,83 +108,24 @@
 .loader {
   margin-left: 50%;
 }
+
 .main__map{
-  background-color: #FAFAFA;
-  &-wrapper{
-    position: relative;
-    z-index: 1;
-    &--item{
-      &-1{
-        border-radius: 50%;
-        background: linear-gradient(180deg, #22949B 0%, rgba(31, 177, 186, 0) 100%), #2760CE;
-        width: 11px;
-        height: 11px;
-        z-index: 3;
-        position: absolute;
-        top: 49%;
-        left: 14%;
-      }
-      &-2{
-        border-radius: 50%;
-        background: linear-gradient(180deg, #22949B 0%, rgba(31, 177, 186, 0) 100%), #2760CE;
-        width: 21px;
-        height: 21px;
-        z-index: 3;
-        position: absolute;
-        left: 34%;
-        top: 61%;
-      }
-      &-3{
-        border-radius: 50%;
-        background: linear-gradient(180deg, #22949B 0%, rgba(31, 177, 186, 0) 100%), #2760CE;
-        width: 11px;
-        height: 11px;
-        z-index: 3;
-        position: absolute;
-        top: 34%;
-        left: 37%;
-      }
-      &-4{
-        border-radius: 50%;
-        background: linear-gradient(180deg, #22949B 0%, rgba(31, 177, 186, 0) 100%), #2760CE;
-        width: 11px;
-        height: 11px;
-        z-index: 3;
-        position: absolute;
-        top: 46%;
-        left: 45%;
-      }
-      &-5{
-        border-radius: 50%;
-        background: linear-gradient(180deg, #22949B 0%, rgba(31, 177, 186, 0) 100%), #2760CE;
-        width: 11px;
-        height: 11px;
-        z-index: 3;
-        position: absolute;
-        top: 51%;
-        left: 48%;
-      }
-      &-6{
-        border-radius: 50%;
-        background: linear-gradient(180deg, #22949B 0%, rgba(31, 177, 186, 0) 100%), #2760CE;
-        width: 11px;
-        height: 11px;
-        z-index: 3;
-        position: absolute;
-        top: 57%;
-        left: 71%;
-      }
-      &-7{
-        border-radius: 50%;
-        background: linear-gradient(180deg, #22949B 0%, rgba(31, 177, 186, 0) 100%), #2760CE;
-        width: 21px;
-        height: 21px;
-        z-index: 3;
-        position: absolute;
-        top: 40%;
-        left: 79%;
-      }
-    }
+  background-image: url('../img/map2.jpg');
+  background-size: cover;
+  background-position:  top center;
+  background-repeat: no-repeat;
+  &-h{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 45px;
+    color: #FFFFFF;
+    margin-left: 15%;
+    margin-top: 85px;
+  }
+  &-item2{
+    top: 31%;
+    left: 20%;
   }
 }
 .margin-left-claim{
