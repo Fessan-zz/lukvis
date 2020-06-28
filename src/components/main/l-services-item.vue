@@ -8,12 +8,12 @@
           <img :src="`https://peaceful-harbor-09047.herokuapp.com/${services_item.path_to}`" alt="Услуги">
           <div>
             <div class="catalog__item-p">
-              <a
-                href="#"
+              <p
+                @click="servicesClick()"
                 v-for="item of services_item.service"
                 :key="item.id"
                 >- {{item.title}}
-              </a>
+              </p>
             </div>
           </div>
         </li>
@@ -30,6 +30,11 @@ export default {
     services_item: {
       type: Object,
       default: () => {},
+    },
+  },
+  methods: {
+    servicesClick() {
+      this.$router.push('/rezka');
     },
   },
 };
@@ -51,14 +56,17 @@ export default {
     text-align: center;
     height: 60px;
   }
-  &-p p{
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 18px;
-    display: flex;
-    align-items: center;
-    color: #FFFFFF;
-
+  &-p {
+    text-align: left;
+    & p{
+      color: white;
+      display: block;
+      font-size: 18px;
+      &:hover{
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
   }
   &-p{
     padding: 20px;

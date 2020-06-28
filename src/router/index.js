@@ -34,6 +34,11 @@ const routes = [
     name: 'metall',
     component: () => import('../views/l-metall.vue'),
   },
+  {
+    path: '/rezka',
+    name: 'rezka',
+    component: () => import('../views/l-rezka.vue'),
+  },
 ];
 
 const router = new VueRouter({
