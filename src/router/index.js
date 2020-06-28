@@ -29,6 +29,11 @@ const routes = [
   //   component: () => import('../views/l-product.vue'),
   //   props: true,
   // },
+  {
+    path: '/metall',
+    name: 'metall',
+    component: () => import('../views/l-metall.vue'),
+  },
 ];
 
 const router = new VueRouter({

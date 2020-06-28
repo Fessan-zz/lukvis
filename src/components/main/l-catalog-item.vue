@@ -36,8 +36,11 @@ export default {
     },
   },
   methods: {
-    productClick(item) {
-      this.$router.push({ name: 'product', query: { product: item.id } });
+    // productClick(item) {
+    //   this.$router.push({ name: 'product', query: { product: item.id } });
+    // },
+    productClick() {
+      this.$router.push('/metall');
     },
   },
 };
