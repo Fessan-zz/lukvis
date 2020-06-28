@@ -29,21 +29,19 @@
                 placeholder="Ввeдите ФИО"
                 v-model.trim="$v.name.$model"
               >
-              <div
-                class="claim__form-error"
-                v-if="$v.name.$error"
-              >
-                <template
+                <div
                   v-if="!$v.name.required"
+                  class="claim__form-error"
                 >
                   Поле обязательно для заполнения<br>
-                </template>
-                <template
+                </div>
+                <div
+                  class="claim__form-error"
                   v-if="!$v.name.minLength || !$v.name.maxLength"
                 >
                   Поле должно содержать от 3 до 60 символов
-                </template>
-              </div>
+                </div>
+
             </div>
             <!-- for phone  -->
             <div
@@ -62,21 +60,19 @@
                   mask="+7(###) ### - ####"
                   v-model.trim="$v.phone.$model"
               />
-              <div
-                class="claim__form-error"
-                v-if="$v.phone.$error"
-              >
-                <template
+
+                <div
+                  class="claim__form-error"
                   v-if="!$v.phone.required"
                 >
                   Поле обязательно для заполнения<br>
-                </template>
-                <template
+                </div>
+                <div
                   v-if="!$v.name.minLength || !$v.name.maxLength"
                 >
                   Заполните поле в международном формате
-                </template>
-              </div>
+                </div>
+
             </div>
             <!-- for email -->
             <div class="form__group d-flex flex-column mt-3">
@@ -93,26 +89,24 @@
                 placeholder="email"
                 v-model.trim="$v.email.$model"
               >
-              <div
-                class="claim__form-error"
-                v-if="$v.email.$error && $v.email.$dirty"
-              >
-                <template
+                <div
+                  class="claim__form-error"
                   v-if="!$v.email.required"
                 >
                   Поле обязательно для заполнения<br>
-                </template>
-                <template
+                </div>
+                <div
+                  class="claim__form-error"
                   v-if="!$v.email.email"
                 >
                   Введите действительную почту
-                </template>
-                <template
+                </div>
+                <div
                   v-if="!$v.email.minLength || !$v.email.maxLength"
                 >
                   Поле должно содержать от 3 до 60 символов
-                </template>
-              </div>
+                </div>
+
             </div>
             <!-- for category select -->
             <div class="form__group d-flex flex-column mt-4">
@@ -134,15 +128,12 @@
                   {{item.name}}
                   </option>
               </select>
-              <div
-                class="claim__form-error"
-                v-if="$v.selected.$error"
-              >
-                <template
+                <div
+                  class="claim__form-error"
+                  v-if="!$v.selected.required"
                 >
                   Поле обязательно для заполнения
-                </template>
-              </div>
+                </div>
             </div>
             <!-- for text-area -->
             <div class="form__group d-flex flex-column mt-3">
@@ -205,7 +196,7 @@
             <button
               type="submit"
               class="claim__btn"
-              :disabled="$v.$invalid"
+
             >ОТПРАВИТЬ ЗАЯВКУ</button>
           </form>
         </b-col>
@@ -215,6 +206,7 @@
 </template>
 
 <script>
+//              :disabled="$v.$invalid"
 import {
   required, minLength, maxLength, email,
 } from 'vuelidate/lib/validators';
