@@ -291,7 +291,9 @@ export default {
       formData.append('comments', this.comments);
       formData.append('file', this.file);
       formData.append('emailTo', this.emailTo);
-      this.POST_CLAIM(formData);
+      this.POST_CLAIM(formData).then(() => {
+        this.$router.push('/succes');
+      });
     },
   },
 };
@@ -316,6 +318,13 @@ textarea{
     box-sizing: border-box;
     padding: 10px;
     margin-left: 35%;
+    &:hover{
+      background-color: #FFD600;
+      text-decoration: none;
+      color: #FFFFFF;
+      transition: 0.5s ease;
+      text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+      }
   }
   &__cont{
     padding-top: 141px;

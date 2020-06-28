@@ -8,12 +8,13 @@
           <img :src="`https://peaceful-harbor-09047.herokuapp.com/${item_data.path_to}`" alt="Изделия">
           <div>
             <div class="catalog__item-p">
-              <a
-                href="#"
+              <router-link
+                to='/catalog'
                 v-for="item of item_data.product"
                 :key="item.id"
                 >- {{item.title}}
-              </a>
+              </router-link>
+              <br>
             </div>
           </div>
         </li>
@@ -52,14 +53,13 @@ export default {
     text-align: center;
     height: 60px;
   }
-  &-p a{
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 18px;
-    display: flex;
-    align-items: left;
-    color: #FFFFFF;
-
+  &-p {
+    text-align: left;
+    & a{
+      color: white;
+      display: block;
+      font-size: 18px;
+    }
   }
   &-p{
     padding: 20px;

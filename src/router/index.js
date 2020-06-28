@@ -18,6 +18,16 @@ const routes = [
     path: '*',
     component: () => import('../views/404.vue'),
   },
+  {
+    path: '/succes',
+    name: 'succesClaim',
+    component: () => import('../views/succesClaim.vue'),
+  },
+  {
+    path: '/catalog',
+    name: 'catalog',
+    component: () => import('../views/l-catalog.vue'),
+  },
 ];
 
 const router = new VueRouter({
