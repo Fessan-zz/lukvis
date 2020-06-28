@@ -14,7 +14,7 @@
 import lCatalogItem from '@/components/main/l-catalog-item.vue';
 
 export default {
-  name: 'catalog',
+  name: 'l-catalog',
   components: {
     lCatalogItem,
   },

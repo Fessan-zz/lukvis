@@ -27,6 +27,7 @@
             class="ml-5"
           >Наши работы</b-nav-item>
           <b-nav-item
+          v-scroll-to="'#footer'"
             class="ml-5"
             v-if="isVisibilityCat()"
           >Контакты</b-nav-item>
@@ -60,7 +61,7 @@ export default {
 <style lang="scss">
 .nav-bar{
   width: 100%;
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
   .nav-bar_links{
     font-weight: normal;

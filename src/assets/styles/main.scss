@@ -73,8 +73,7 @@
 // central section
 
 .main__central{
-  background-image: url('../img/bck.png');
-  background-repeat: no-repeat;
+
 
   &-h2{
   font-weight: bold;
@@ -110,10 +109,6 @@
 }
 
 .main__map{
-  background-image: url('../img/map2.jpg');
-  background-size: cover;
-  background-position:  top center;
-  background-repeat: no-repeat;
   &-h{
     font-style: normal;
     font-weight: bold;
@@ -132,7 +127,8 @@
   padding-bottom: 0;
 }
 .main__claim{
-  background-color:  #E5E5E5;
+  padding-left: 10px;
+  padding-right: 0 !important;
   &-wrapper p{
     margin-left: 37px;
   }

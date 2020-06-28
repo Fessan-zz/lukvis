@@ -66,7 +66,7 @@
             <b-col cols="6">
               <b-row>
                 <b-col cols="6">
-                  <img class="main__icon ml-2" src="../assets/img/2.svg" alt="city">
+                  <img class="main__icon--city ml-2" src="../assets/img/2.svg" alt="city">
                 </b-col>
                 <b-col cols="6" class="d-flex align-items-center">
                   <p><span class="main__icon-strong">15 городов<br></span> из России и СНГ</p>
@@ -97,7 +97,7 @@
             </b-col>
           </b-row>
         </b-col>
-        <b-col cols="5">
+        <b-col cols="5" class="main__img-tower">
           <img class="img-fluid mt-5" src="../assets/img/towerGreen.jpg" alt="tower">
         </b-col>
         </b-row>
@@ -105,19 +105,15 @@
 
       <!-- map -->
       <section class="main__map">
-        <b-container id="map" class="clo-lg-12 pb-5" >
-          <b-row>
-            <h2 class="main__map-h">География работ</h2>
-          </b-row>
+        <b-container id="map" class="col-lg-12" >
           <b-row class="position-relative">
-            <img src="../assets/img/map.png" alt="map" class="img-fluid main__map-item1">
-            <img src="../assets/img/star.png"
-            alt="city" class="main__map--item2 img-fliud position-absolute">
+            <h2 class="main__map-h position-absolute">География работ</h2>
+            <img src="../assets/img/map.jpg" alt="map" class="img-fluid main__map-item1">
           </b-row>
       </b-container>
       </section>
       <!-- claim -->
-      <div class="main__claim" id="claim">
+      <div class="main__claim col-lg-12" id="claim">
         <l-claim/>
       </div>
     </section>
@@ -173,5 +169,11 @@ export default {
 </script>
 
 <style lang="scss" >
-
+.main__img-tower{
+  margin-top: 100px;
+}
+.main__icon--city{
+  width: 115px;
+  height: 115px;
+}
 </style>

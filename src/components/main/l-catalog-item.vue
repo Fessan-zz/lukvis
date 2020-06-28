@@ -8,12 +8,13 @@
           <img :src="`https://peaceful-harbor-09047.herokuapp.com/${item_data.path_to}`" alt="Изделия">
           <div>
             <div class="catalog__item-p">
-              <router-link
-                to='/catalog'
+              <p
                 v-for="item of item_data.product"
                 :key="item.id"
+                @click="productClick(item)"
+                :item__data="item"
                 >- {{item.title}}
-              </router-link>
+              </p>
               <br>
             </div>
           </div>
@@ -32,6 +33,11 @@ export default {
     item_data: {
       type: Object,
       default: () => {},
+    },
+  },
+  methods: {
+    productClick(item) {
+      this.$router.push({ name: 'product', query: { product: item.id } });
     },
   },
 };
@@ -55,10 +61,14 @@ export default {
   }
   &-p {
     text-align: left;
-    & a{
+    & p{
       color: white;
       display: block;
       font-size: 18px;
+      &:hover{
+        cursor: pointer;
+        text-decoration: underline;
+      }
     }
   }
   &-p{

@@ -23,11 +23,12 @@ const routes = [
     name: 'succesClaim',
     component: () => import('../views/succesClaim.vue'),
   },
-  {
-    path: '/catalog',
-    name: 'catalog',
-    component: () => import('../views/l-catalog.vue'),
-  },
+  // {
+  //   path: '/product',
+  //   name: 'product',
+  //   component: () => import('../views/l-product.vue'),
+  //   props: true,
+  // },
 ];
 
 const router = new VueRouter({

@@ -322,18 +322,20 @@ textarea{
     padding-top: 141px;
     padding-bottom: 250px;
     &-h3{
+      font-style: normal;
       font-weight: bold;
       font-size: 48px;
       line-height: 45px;
+      letter-spacing: 0.05em;
       color: #FFFFFF;
-      margin-left: -5px;
+      margin-left: -25px;
     }
     &-wrapper-blue{
       background: linear-gradient(255.74deg, #2760CE -31.61%, rgba(31, 177, 186, 0.6) 74.55%);
       width: 100%;
       height: 118px;
       max-width: 668px;
-      margin-left: -123px;
+      margin-left: -118px;
     }
     &-wrapper-p{
       font-weight: 500;
