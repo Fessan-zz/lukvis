@@ -16,7 +16,8 @@
               <img src="../assets/img/rezka.jpg" alt="">
             </b-col>
           </b-row>
-          <p>Оставить заявку вы можете на <a href="/">главной</a> странице</p>
+          <p>Оставить заявку вы можете на
+            <router-link to="/#claim">главной</router-link> странице</p>
         </b-container>
   </div>
 </template>

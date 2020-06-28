@@ -19,7 +19,8 @@
           <img src="../assets/img/metall.jpg" alt="">
         </b-col>
       </b-row>
-      <p>Оставить заявку вы можете на <a href="/">главной</a> странице</p>
+      <p>Оставить заявку вы можете на
+        <router-link to="/#claim">главной</router-link> странице странице</p>
     </b-container>
   </div>
 </template>
