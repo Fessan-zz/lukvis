@@ -205,6 +205,7 @@
             <button
               type="submit"
               class="claim__btn"
+              :disabled="$v.$invalid"
             >ОТПРАВИТЬ ЗАЯВКУ</button>
           </form>
         </b-col>
@@ -214,7 +215,6 @@
 </template>
 
 <script>
-// :disabled="$v.$invalid"
 import {
   required, minLength, maxLength, email,
 } from 'vuelidate/lib/validators';

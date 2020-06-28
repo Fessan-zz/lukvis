@@ -17,6 +17,7 @@ export default {
             'Content-Type': 'multipart/form-data',
           },
         }).then((resp) => {
+        console.log(resp, 'resp');
         commit('ADD_POST', resp);
         return resp;
       }).catch((e) => e);
