@@ -231,7 +231,7 @@ export default {
       comments: '',
       file: '',
       checked: false,
-      emailTo: 'fessan@ya.ru',
+      emailTo: 'lukvisOrg@yandex.ru',
       categories: [
         { name: 'Металлоизделия', id: 1 },
         { name: 'Элементы фундаментов', id: 2 },
