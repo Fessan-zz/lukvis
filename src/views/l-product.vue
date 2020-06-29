@@ -8,7 +8,9 @@
            {{GET_PRODUCT_ITEM_TO_STATE.price}}р.</p>
         </b-col>
         <b-col class="clo-lg-6 metall__right">
-          <img :src="`https://peaceful-harbor-09047.herokuapp.com/${img}`" alt="">
+          <img
+          v-if="img"
+          :src="`https://peaceful-harbor-09047.herokuapp.com/${img[0].path_to}`" alt="">
         </b-col>
       </b-row>
       <p>Оставить заявку вы можете на
@@ -32,9 +34,9 @@ export default {
     ...mapGetters(['GET_PRODUCT_ITEM_TO_STATE']),
     img() {
       let str = '';
-      if (this.GET_PRODUCT_ITEM_TO_STATE.images_show[0].path_to) {
-        console.log(this.GET_PRODUCT_ITEM_TO_STATE.images_show[0], 'this.GET_PRODUCT_ITEM_TO_STATE.images_show[0].path_to');
-        str = this.GET_PRODUCT_ITEM_TO_STATE.images_show[0].path_to;
+      if (this.GET_PRODUCT_ITEM_TO_STATE.images_show) {
+        // eslint-disable-next-line prefer-destructuring
+        str = this.GET_PRODUCT_ITEM_TO_STATE.images_show;
       } else {
         str = '';
       }
@@ -52,9 +54,7 @@ export default {
   methods: {
     ...mapActions(['GET_PRODUCT_ITEM']),
     set() {
-      this.GET_PRODUCT_ITEM(this.$route.query.product).then((resp) => {
-        console.log(resp.data, 'response');
-      });
+      this.GET_PRODUCT_ITEM(this.$route.query.product);
     },
   },
 

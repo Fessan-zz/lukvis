@@ -9,7 +9,7 @@
           <div>
             <div class="catalog__item-p">
               <p
-                @click="servicesClick()"
+                @click="servicesClick(item)"
                 v-for="item of services_item.service"
                 :key="item.id"
                 >- {{item.title}}
@@ -33,8 +33,8 @@ export default {
     },
   },
   methods: {
-    servicesClick() {
-      this.$router.push('/rezka');
+    servicesClick(item) {
+      this.$router.push({ name: 'service', query: { service: item.id } });
     },
   },
 };

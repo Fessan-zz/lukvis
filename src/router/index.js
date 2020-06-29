@@ -30,16 +30,13 @@ const routes = [
     component: () => import('../views/l-product.vue'),
     props: true,
   },
-  // {
-  //   path: '/metall',
-  //   name: 'metall',
-  //   component: () => import('../views/l-metall.vue'),
-  // },
-  // {
-  //   path: '/rezka',
-  //   name: 'rezka',
-  //   component: () => import('../views/l-rezka.vue'),
-  // },
+  {
+    path: '/service',
+    name: 'service',
+    component: () => import('../views/l-serv.vue'),
+    props: true,
+  },
+
 ];
 
 const router = new VueRouter({

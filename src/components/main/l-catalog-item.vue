@@ -36,17 +36,9 @@ export default {
     },
   },
   methods: {
-    // productClick() {
-    //   this.$router.push('/metall');
-    // },
     productClick(item) {
-      console.log(item, 'item__data');
       this.$router.push({ name: 'product', query: { product: item.id } });
     },
-  },
-  computed: {
-  },
-  mounted() {
   },
 };
 </script>
