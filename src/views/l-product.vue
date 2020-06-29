@@ -1,11 +1,20 @@
 <template>
-  <b-container class="col-lg-12">
-    <h1>{{product.title}}</h1>
-    <p>{{product.description}}</p>
-    <img
-      alt=""
-    >
-  </b-container>
+  <div class="col-lg-12 metall">
+    <b-container class="my-5">
+      <b-row>
+        <b-col class="col-lg-6 metall__left">
+          <h2 class="main__central-h2">{{GET_PRODUCT_ITEM_TO_STATE.title}}</h2>
+          <p>{{GET_PRODUCT_ITEM_TO_STATE.description}}<br>Цена:
+           {{GET_PRODUCT_ITEM_TO_STATE.price}}р.</p>
+        </b-col>
+        <b-col class="clo-lg-6 metall__right">
+          <img :src="`https://peaceful-harbor-09047.herokuapp.com/${img}`" alt="">
+        </b-col>
+      </b-row>
+      <p>Оставить заявку вы можете на
+        <router-link to="/#claim">главной</router-link> странице странице</p>
+    </b-container>
+  </div>
 </template>
 
 <script>
@@ -13,45 +22,42 @@ import { mapGetters, mapActions } from 'vuex';
 
 export default {
   name: 'catalog',
-  // data() {
-  //   return {
-  //     product: {},
-  //     pathImag: '',
-  //   };
-  // },
   props: {
-    item__date: {
+    item: {
       type: Object,
       default: () => {},
     },
   },
-  methods: {
-    ...mapActions(['GET_PRODUCT_ITEM']),
-  },
   computed: {
-    ...mapGetters(['GET_PRODUCTS_TO_STATE']),
-    product() {
-      let result = {};
-      this.GET_PRODUCTS_TO_STATE.map((item) => {
-        result = item;
-        console.log(result);
-        return result;
-      });
-      return result;
+    ...mapGetters(['GET_PRODUCT_ITEM_TO_STATE']),
+    img() {
+      let str = '';
+      if (this.GET_PRODUCT_ITEM_TO_STATE.images_show[0].path_to) {
+        console.log(this.GET_PRODUCT_ITEM_TO_STATE.images_show[0], 'this.GET_PRODUCT_ITEM_TO_STATE.images_show[0].path_to');
+        str = this.GET_PRODUCT_ITEM_TO_STATE.images_show[0].path_to;
+      } else {
+        str = '';
+      }
+      return str;
     },
   },
   mounted() {
-    console.log(this.product);
-    const id = this.$route.query.product;
-    this.GET_PRODUCT_ITEM(id);
-    // .then((resp) => {
-    //   // console.log(resp.data.product);
-    //   this.product = resp.data.product;
-    //   const img = resp.data.image[0].path_to;
-    //   this.pathImag = img;
-    // });
-    // console.log(this.pathImag);
+    this.set();
   },
+  watch: {
+    $route() {
+      this.set();
+    },
+  },
+  methods: {
+    ...mapActions(['GET_PRODUCT_ITEM']),
+    set() {
+      this.GET_PRODUCT_ITEM(this.$route.query.product).then((resp) => {
+        console.log(resp.data, 'response');
+      });
+    },
+  },
+
 };
 </script>
 

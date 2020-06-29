@@ -1,6 +1,8 @@
 <template>
-  <div class="about">
-
+  <div class="about col-lg-12">
+    <b-container>
+      adad
+    </b-container>
   </div>
 </template>
 

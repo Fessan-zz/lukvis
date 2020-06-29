@@ -24,13 +24,13 @@ export default {
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  border: 1px solid #FFD600;
+  border: 1px solid #2760CE;
   padding-top: 10px;
-  color: #FFD600;
+  color: #2760CE;
   font-size: 26px;
   font-weight: 300;
   &:hover{
-    background-color: #FFD600;
+    background-color: #2760CE;
     color: white;
   }
 }
