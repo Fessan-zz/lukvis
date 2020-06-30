@@ -196,7 +196,7 @@
             <button
               type="submit"
               class="claim__btn"
-
+              :disabled="$v.$invalid"
             >ОТПРАВИТЬ ЗАЯВКУ</button>
           </form>
         </b-col>
@@ -206,7 +206,6 @@
 </template>
 
 <script>
-//              :disabled="$v.$invalid"
 import {
   required, minLength, maxLength, email,
 } from 'vuelidate/lib/validators';
@@ -310,6 +309,7 @@ textarea{
     box-sizing: border-box;
     padding: 10px;
     margin-left: 35%;
+    margin-top: 25px;
     &:hover{
       background-color: #FFD600;
       text-decoration: none;
@@ -317,6 +317,10 @@ textarea{
       transition: 0.5s ease;
       text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
       }
+    &:disabled{
+      color: #828282;
+      border: 2px solid #D9D9D9;
+    }
   }
   &__cont{
     padding-top: 141px;
@@ -366,6 +370,7 @@ textarea{
       line-height: 20px;
       text-align: center;
       color: #4F4F4F;
+      height: 51px;
     }
   }
   &-input{

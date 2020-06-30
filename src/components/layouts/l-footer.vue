@@ -16,8 +16,8 @@
             (3822) 90-56-78, 22-65-02
           </p>
           <p>
-            <span class="footer__text-span">e-mail</span>
-             uzorluk@mail.ru lukvis@mail.ru
+            <span class="footer__text-span">e-mail:</span>
+              lukvis@mail.ru
           </p>
         </b-col>
         <b-col cols="5">
