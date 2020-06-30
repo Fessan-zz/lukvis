@@ -64,7 +64,7 @@ export default {
     & p{
       color: white;
       display: block;
-      font-size: 16px;
+      font-size: 18px;
       &:hover{
         cursor: pointer;
         text-decoration: underline;
